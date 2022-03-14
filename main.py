@@ -22,10 +22,7 @@ if __name__ == "__main__":
             'https://habr.com' + 
             _article.find(class_="tm-article-snippet__title tm-article-snippet__title_h2").find('a').attrs['href']
         )
-        body = _article.find(class_="article-formatted-body article-formatted-body_version-2")
-        if body == None:
-            body = _article.find(class_="article-formatted-body article-formatted-body_version-1")
-        text = body.text
+        text =  _article.text
         
         for _word in KEYWORDS:
             if title in list_of_selected_articles:
